@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 ##--------------------------------------------------------------------
 ## Copyright (c) 2019 Dianomic Systems
@@ -16,20 +16,10 @@
 ## limitations under the License.
 ##--------------------------------------------------------------------
 
-##--------------------------------------------------------------------
 ##
-## @postinst DEBIAN/postinst
-## This script is used to execute post installation tasks.
+## Author: Ashish Jabble
 ##
-## Author: Massimiliano Pinto
-##
-##--------------------------------------------------------------------
 
 set -e
 
-set_files_ownership () {
-    chown -R root:root /usr/local/foglamp/plugins/notify/slack
-}
-
-set_files_ownership
-echo "Slack notify plugin is installed"
+sudo apt-get install libcurl4-openssl-dev

@@ -32,6 +32,17 @@ You must obtain a URL from Slack by visiting the page https://api.slack.com/apps
 
 You may also configure some static text that will be sent in each notification.
 
+Installation
+------------
+
+The plugin can be installed with given `requirements.sh <requirements.sh>`_ or the following steps:
+
+
+.. code-block:: bash
+
+   $ sudo apt install -y libcurl4-openssl-dev
+
+
 Build
 -----
 To build FogLAMP "slack notification" C++ plugin:
@@ -107,12 +118,10 @@ Run the make_deb command after compiling the plugin:
 .. code-block:: console
 
   $ ./make_deb help
-  make_deb {x86|arm} [help|clean|cleanall]
+  make_deb [help|clean|cleanall]
   This script is used to create the Debian package of FoglAMP C++ 'slack notification' plugin
   Arguments:
    help     - Display this help text
-   x86      - Build an x86_64 package
-   arm      - Build an armv7l package
    clean    - Remove all the old versions saved in format .XXXX
    cleanall - Remove all the versions, including the last one
   $
@@ -125,8 +134,9 @@ Finally, run the ``make_deb`` command:
 .. code-block:: console
 
    $ ./make_deb
+   Building on amd64 architecture...
    The package root directory is   : /home/ubuntu/source/foglamp-notify-slack
-   The FogLAMP required version    : >=1.4
+   The FogLAMP required version    : >=1.5
    The package will be built in    : /home/ubuntu/source/foglamp-notify-slack/packages/build
    The architecture is set as      : x86_64
    The package name is             : foglamp-notify-slack-1.0.0-x86_64
