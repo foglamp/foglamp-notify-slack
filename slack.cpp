@@ -85,11 +85,11 @@ SimpleHttps	*https;
 		string hostAndPort(hostName + ":" + port);
 		https  = new SimpleHttps(hostAndPort);
 	}
-	Logger::getLogger()->info("Send slack payload: %s", payload.str().c_str());
+
 	int errorCode;
-	if ((errorCode = https->sendRequest("POST", m_url, headers, payload.str())) == 200 || errorCode == 202)
+	if ((errorCode = https->sendRequest("POST", m_url, headers, payload.str())) != 200 && errorCode == 202)
 	{
-		Logger::getLogger()->error("Failed to send notification to slack webhook  %s, errorCode %d", m_url, errorCode);
+		Logger::getLogger()->error("Failed to send notification to slack webhook  %s, errorCode %d", m_url.c_str(), errorCode);
 	}
 	delete https;
 }
