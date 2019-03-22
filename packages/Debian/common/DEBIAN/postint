@@ -28,7 +28,7 @@
 set -e
 
 set_files_ownership () {
-    chown -R root:root /usr/local/foglamp/plugins/notify/slack
+    chown -R root:root /usr/local/foglamp/plugins/notificationDelivery/slack
 }
 
 set_files_ownership
