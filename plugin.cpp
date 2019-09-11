@@ -1,5 +1,5 @@
 /*
- * FogLAMP "slack" notification plugin.
+ * Fledge "slack" notification plugin.
  *
  * Copyright (c) 2019 Dianomic Systems
  *
